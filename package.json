@@ -7,7 +7,7 @@
     "dev": "tsx watch index.ts",
     "build": "tsc -p .",
     "start": "node dist/index.js",
-    "rebuild_db": "psql -U postgres -f ./src/rebuild_db.sql"
+    "rebuild_db": "psql -U postgres -f ./src/rebuild_db.sql --encoding=UTF8"
   },
   "keywords": [],
   "author": "",
