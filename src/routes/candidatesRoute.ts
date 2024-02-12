@@ -10,6 +10,6 @@ router.post('/', async (req: Request, res: Response) => await candidateControlle
 router.get('/:id', async (req: Request, res: Response) => await candidateController.getCandidate(req,res));
 router.put('/:id', async (req: Request, res: Response) => await candidateController.updateCandidate(req,res));
 router.delete('/:id', async (req: Request, res: Response) => await candidateController.deleteCandidate(req,res));
-router.get('/', async (req: Request, res: Response) => await candidateController.getCandidates(req, res));
+router.get('/', async (req: Request<{}, {}, {}, { page: number, size: number, filterText?: string }>, res: Response) => await candidateController.getCandidates(req, res));
 
 export default router;

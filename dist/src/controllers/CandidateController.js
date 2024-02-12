@@ -70,9 +70,9 @@ class CandidateController {
     }
     getCandidates(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { from, to, filterText } = req.body;
+            const { page, size, filterText } = req.query;
             try {
-                const candidates = yield this.candidateService.getCandidates(from, to, filterText);
+                const candidates = yield this.candidateService.getCandidates(+page || 0, +size || 4, filterText);
                 res.status(200).send(candidates);
             }
             catch (error) {

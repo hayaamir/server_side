@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef1df9d3-7fde-43f9-aecf-90644215a613" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/CandidateController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/CandidateController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/CandidateDataAccess.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/CandidateDataAccess.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/CandidateDataAccessInterface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/CandidateDataAccessInterface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/candidatesRoute.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/candidatesRoute.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/candidateService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/candidateService.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2biQ7JxYua7VKqCOuM3ZhPygFbZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/SAMSUNG/Desktop/WebDev23/Full Stack Web/backend/blog-main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "AtomSettingsConfigurable",
+    "ts.external.directory.path": "C:\\Users\\SAMSUNG\\WebStorm 2023.2.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef1df9d3-7fde-43f9-aecf-90644215a613" name="Changes" comment="" />
+      <created>1706695257825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706695257825</updated>
+      <workItem from="1706695266536" duration="1874000" />
+      <workItem from="1707051318126" duration="34000" />
+      <workItem from="1707128648430" duration="7786000" />
+      <workItem from="1707205513737" duration="3028000" />
+      <workItem from="1707471654223" duration="11688000" />
+      <workItem from="1707591649013" duration="2119000" />
+      <workItem from="1707595499283" duration="3000" />
+      <workItem from="1707597871006" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

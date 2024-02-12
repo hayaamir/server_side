@@ -69,14 +69,16 @@ export class CandidateController {
         }
     }
 
-    async getCandidates(req: Request, res: Response): Promise<void> {
-        const { from, to, filterText } = req.body;
+    async getCandidates(req: Request<{}, {}, {}, { page: number, size: number, filterText?: string }>, res: Response) {
+        const {page, size, filterText } = req.query
 
         try {
-            const candidates = await this.candidateService.getCandidates(from, to, filterText);
+            const candidates = await this.candidateService.getCandidates(+page || 0, +size || 4, filterText);
             res.status(200).send(candidates);
         } catch (error) {
             res.status(400).send((error as Error).message);
         }
     }
+
+
 }

@@ -53,10 +53,10 @@ class CandidateService {
             }
         });
     }
-    getCandidates(from, to, filterText) {
+    getCandidates(page, size, filterText) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                return yield this.candidateDataAccess.getCandidates(from, to, filterText);
+                return yield this.candidateDataAccess.getCandidates(page, size, filterText);
             }
             catch (error) {
                 throw new Error(`Unable to get candidates: ${error.message}`);

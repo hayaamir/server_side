@@ -4,11 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const candidatesRoute_1 = __importDefault(require("./src/routes/candidatesRoute"));
+const userRoute_1 = __importDefault(require("./src/routes/userRoute"));
 const app = (0, express_1.default)();
+require("dotenv/config");
+require("google-auth-library");
+const port = process.env.PORT;
 app.use(express_1.default.json());
-const port = 3000;
+app.use((0, cors_1.default)());
 app.use("/candidates", candidatesRoute_1.default);
+app.use("/users", userRoute_1.default);
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });

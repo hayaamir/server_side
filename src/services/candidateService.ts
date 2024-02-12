@@ -40,10 +40,11 @@ export class CandidateService {
         }
     }
 
-    async getCandidates(from?: number, to?: number, filterText?: string): Promise<Candidate[]> {
+    async getCandidates(page: number, size: number, filterText?: string): Promise<{candidates: Candidate[], totalPages: number}> {
         try {
-            return await this.candidateDataAccess.getCandidates(from, to, filterText);
-        } catch (error) {
+            return await this.candidateDataAccess.getCandidates(
+                page, size, filterText
+            )} catch (error) {
             throw new Error(`Unable to get candidates: ${(error as Error).message}`);
         }
     }

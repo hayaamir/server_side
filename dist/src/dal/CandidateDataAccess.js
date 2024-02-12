@@ -17,9 +17,8 @@ const db_1 = __importDefault(require("../../db"));
 class CandidateDataAccess {
     add(candidate) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = 'INSERT INTO candidate (id, user_id, first_name, last_name, gender, age, address, current_job, pasts_occupations, parents, siblings, height, remarks, photos, phone) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)';
+            const query = 'INSERT INTO candidate (user_id, first_name, last_name, gender, age, address, current_job, pasts_occupations, parents, siblings, height, remarks, photos, phone) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)';
             yield db_1.default.query(query, [
-                candidate.id,
                 candidate.user_id,
                 candidate.first_name,
                 candidate.last_name,
@@ -75,22 +74,29 @@ class CandidateDataAccess {
             }
         });
     }
-    getCandidates(from, to, filterText) {
+    getCandidates(pageParam, sizeParam, filterText) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = `
-        SELECT "id", "user_id", "first_name", "last_name", "gender", "age", "address", "current_job", "pasts_occupations", "parents", "siblings", "height", "remarks", "photos", "phone"
-        FROM candidate`;
-            let { rows } = yield db_1.default.query(query);
-            if (rows.length === 0) {
-                throw new Error("No candidates found");
-            }
-            if (from !== undefined && to !== undefined) {
-                rows = rows.filter((row) => row.id >= from && row.id <= to);
-            }
+            let candidatesQuery = `SELECT * FROM candidate`;
+            let totalQuery = `SELECT COUNT(*) FROM candidate`;
+            const queryParams = [];
+            // Adding filter condition if filterText is provided
             if (filterText) {
-                rows = rows.filter((row) => row.first_name.includes(filterText) || row.last_name.includes(filterText));
+                candidatesQuery += ` WHERE first_name LIKE $1 OR last_name LIKE $1`;
+                totalQuery += ` WHERE first_name LIKE $1 OR last_name LIKE $1`;
+                queryParams.push(`%${filterText}%`);
             }
-            return rows;
+            // Completing the query for pagination
+            candidatesQuery += ` LIMIT $${queryParams.length + 1} OFFSET $${queryParams.length + 2}`;
+            // Fetching filtered and paginated candidates
+            const candidatesResult = yield db_1.default.query(candidatesQuery, [...queryParams, sizeParam, sizeParam * pageParam]);
+            // Fetching total number of candidates for pagination
+            const totalResult = yield db_1.default.query(totalQuery, queryParams);
+            const totalRows = parseInt(totalResult.rows[0].count);
+            const totalPages = Math.ceil(totalRows / sizeParam);
+            return {
+                candidates: candidatesResult.rows,
+                totalPages
+            };
         });
     }
 }
